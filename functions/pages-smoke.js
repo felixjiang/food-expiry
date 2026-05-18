@@ -75,7 +75,3 @@ async function handleRequest(event, entry) {
 export function onRequest(context) {
   return handleRequest(context, 'onRequest')
 }
-
-addEventListener('fetch', (event) => {
-  event.respondWith(handleRequest(event, 'fetch-event'))
-})
