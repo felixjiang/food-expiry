@@ -22,9 +22,10 @@ npm run dev
 npm run build
 ```
 
-部署到腾讯云 Pages 时可使用以下配置：
-- 项目根目录：`web`
-- 安装命令：`npm install`
+部署到火山引擎 Pages 时可使用以下配置：
+
+- 项目根目录：留空
+- 安装命令：`npm ci`
 - 构建命令：`npm run build`
 - 输出目录：`dist`
 
