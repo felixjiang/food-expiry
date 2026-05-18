@@ -45,7 +45,7 @@ type ShelfLife = {
 }
 
 const INSTALL_DISMISSED_KEY = 'food-expiry-install-dismissed'
-const CLOUD_RECOGNITION_URL = 'https://1259665212-djiyi59a60.ap-shanghai.tencentscf.com'
+const CLOUD_RECOGNITION_URL = '/functions/api/recognize'
 const CLIENT_IMAGE_MAX_DIMENSION = 1080
 const CLIENT_IMAGE_QUALITY = 0.62
 const CLIENT_FAST_COUNT_HINT = 4
