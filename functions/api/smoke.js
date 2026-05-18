@@ -5,6 +5,18 @@ function jsonHeaders() {
   }
 }
 
+function maskValue(value) {
+  if (!value) {
+    return null
+  }
+
+  if (value.length <= 8) {
+    return `${value.slice(0, 2)}***`
+  }
+
+  return `${value.slice(0, 4)}***${value.slice(-4)}`
+}
+
 export async function onRequest(request) {
   if (request.method === 'OPTIONS') {
     return new Response(null, {
@@ -25,6 +37,14 @@ export async function onRequest(request) {
         entry: 'onRequest-request',
         route: '/functions/api/smoke',
         now: new Date().toISOString(),
+        checks: {
+          hasArkModel: Boolean(process.env.ARK_MODEL),
+          hasArkApiKey: Boolean(process.env.ARK_API_KEY),
+        },
+        values: {
+          arkModel: process.env.ARK_MODEL || null,
+          arkApiKeyMasked: maskValue(process.env.ARK_API_KEY),
+        },
       },
       null,
       2
