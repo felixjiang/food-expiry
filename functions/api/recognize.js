@@ -102,7 +102,7 @@ export async function onRequest(request) {
     }
 
     const currentDate = todayString()
-    const arkTimeoutMs = getPositiveInteger(process.env.ARK_TIMEOUT_MS, 18000)
+    const arkTimeoutMs = getPositiveInteger(process.env.ARK_TIMEOUT_MS, 30000)
     const arkMaxTokens = getPositiveInteger(process.env.ARK_MAX_TOKENS, 320)
     const arkImageDetail = getArkImageDetail(process.env.ARK_IMAGE_DETAIL)
     const arkPrimaryReasoningEffort = getReasoningEffort(
