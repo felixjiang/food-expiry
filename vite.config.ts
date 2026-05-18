@@ -45,8 +45,8 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,webmanifest}'],
         cleanupOutdatedCaches: true,
-        // Do not serve index.html for text-file verification URLs such as WeChat site checks.
-        navigateFallbackDenylist: [/\.txt$/],
+        // Do not serve index.html for verification files or server-side function routes.
+        navigateFallbackDenylist: [/\.txt$/, /^\/functions\//],
       },
       devOptions: {
         // Keep PWA disabled in dev to avoid stale service-worker cache on localhost.
